@@ -1,0 +1,10 @@
+exportPattern("^[[:alpha:]]+")
+
+importFrom("gridExtra")
+
+
+export(ensembler.classifier
+  , ensembler.regression )
+
+
+

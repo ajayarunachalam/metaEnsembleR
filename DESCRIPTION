@@ -1,0 +1,18 @@
+Package: metaEnsembleR
+Type: Package
+Title: metaEnsembleR is a package for meta-level ensemble learning (Classification, Regression) that is fully-automated.
+Version: 0.1.0
+Date: 2020-10-25
+Author: Ajay Arunachalam
+Maintainer: Ajay Arunachalam <ajay.arunachalam08@gmail.com>
+Description: metaEnsembleR significantly lowers the barrier for the practitioners to apply heterogeneous ensemble learning techniques in an amateur fashion to their everyday predictive problems. 
+License: GPL (>= 2)
+Encoding: UTF-8
+NeedsCompilation: no
+Repository: CRAN
+Imports: 
+  caret, ggplot2, gridExtra, graphics, e1071
+Depends:
+  gridExtra
+Suggests:
+  knitr
