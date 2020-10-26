@@ -11,7 +11,7 @@ Intuitive Package for Heterogeneous Ensemble Meta-Learning
 
 ## Overview
 metaEnsembleR is a package for meta-level ensemble learning (Classification, Regression) that is fully-automated.
-It significantly lowers the barrier for the practitioners to apply heterogeneous ensemble learning techniques in an amateur fashion to their everyday predictive problems. 
+It significantly lowers the barrier for the practitioners to apply heterogeneous ensemble learning techniques in an amateur fashion to their everyday predictive problems. Comprehensive demo examples can be found in ``` Rscript Demo.R ```
 
 ## How to start
 ```
@@ -70,7 +70,6 @@ write.csv(modelresult[[1]], "performance_chart.csv")
 ####unseen data###
 unseenpreddata <- data.frame(ensembler_return[4])
 ```
-
 
 
 ## Contact
