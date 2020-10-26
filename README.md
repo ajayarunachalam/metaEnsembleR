@@ -5,8 +5,8 @@ Intuitive Package for Heterogeneous Ensemble Meta-Learning
 - [Overview](#description)
   * [How to start](#installation)
   * [Examples](#examples)
-  		* [demo classification] (#democlassification)
-  		* [demo regression] (#demoregression)
+  		* [demo classification] (#demo classification)
+  		* [demo regression] (#demo regression)
   * [Contact](#contact)
 
 ## Overview
@@ -25,6 +25,7 @@ Install from Rconsole :  install.packages("metaEnsembleR")
 ## Examples
 
 # demo classification
+```
 library("metaEnsembleR")
 attach(iris)
 data("iris")
@@ -50,9 +51,10 @@ ggsave("testdata_actual_vs_predicted_plot.pdf",grid.arrange(act_mybar, pred_myba
 ####unseen data###
 unseenpreddata <- data.frame(ensembler_return[4])
 table(unseenpreddata$unseenpreddata)
-
+```
 
 # demo regression
+```
 house_price <- read.csv(file = './data/regression/house_price_data.csv')
 unseen_new_data_testing_house_price <- house_price[250:414,]
 write.csv(unseen_new_data_testing_house_price, 'unseen_house_price_regression.csv', fileEncoding = 'UTF-8', row.names = F)
@@ -67,7 +69,7 @@ write.csv(modelresult[[1]], "performance_chart.csv")
 
 ####unseen data###
 unseenpreddata <- data.frame(ensembler_return[4])
-
+```
 
 
 
