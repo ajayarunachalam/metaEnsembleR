@@ -37,9 +37,10 @@ ensembler_return <- ensembler.classifier(iris[1:130,], 5, c('treebag','rpart'), 
 testpreddata <- data.frame(ensembler_return[1])
 table(testpreddata$actual_label)
 table(ensembler_return[2])
+
+####Performance comparison#####
 modelresult <- ensembler_return[3]
 modelresult
-####Performance comparison#####
 act_mybar <- qplot(testpreddata$actual_label, geom="bar")
 act_mybar
 pred_mybar <- qplot(testpreddata$predictions, geom='bar')
