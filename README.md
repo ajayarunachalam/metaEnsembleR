@@ -58,7 +58,7 @@ table(unseenpreddata$unseenpreddata)
 ```
 data("rock")
 unseen_rock_data <- rock[30:48,]
-ensembler_return <- ensembler.regression(rock[1:30,], 3, c('treebag','rpart'), 'gbm', 0.60, 0.20, 0.20, unseen_rock_data)
+ensembler_return <- ensembler.regression(rock[1:30,], 4,c('lm'), 'rf', 0.40, 0.30, 0.30, unseen_rock_data)
 testpreddata <- data.frame(ensembler_return[1])
 
 
