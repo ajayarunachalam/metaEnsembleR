@@ -5,12 +5,12 @@
 ensembler.classifier <- function(data, outcomeVARIABLEINDEX, IndividualModels,  TopLayerModel, dstr,dsv, dst, unseen_new_data) {
   predictors <- names(data[,-c(outcomeVARIABLEINDEX)])
   print(predictors)
-  fractionTraining   <- dstr #0.60
-  fractionValidation <- dsv #0.20
-  fractionTest       <- dst #0.20
+  fractionTraining   <- dstr
+  fractionValidation <- dsv
+  fractionTest       <- dst
 
   # Compute sample sizes.
-  sampleSizeTraining   <- floor(fractionTraining   * nrow(data)) # iris dhfr
+  sampleSizeTraining   <- floor(fractionTraining   * nrow(data))
   sampleSizeValidation <- floor(fractionValidation * nrow(data))
   sampleSizeTest       <- floor(fractionTest       * nrow(data))
 
@@ -35,14 +35,12 @@ ensembler.classifier <- function(data, outcomeVARIABLEINDEX, IndividualModels,  
     print(model)
     Training[, (ncol(Training)+1)] <- (caret::predict.train(object=model, (Training[,predictors])))
     print(Training[, (ncol(Training))])
-    #training[, (ncol(training))] <- mean(training[, (ncol(training))])
 
     Validation[,(ncol(Validation)+1)] <- (caret::predict.train(object=model, (Validation[,predictors])))
 
 
 
     Test[,(ncol(Test)+1)] <- (caret::predict.train(object=model, (Test[,predictors])))
-    #testing[, (ncol(testing))] <- mean(testing[, (ncol(testing))])
 
 
   }
@@ -67,11 +65,10 @@ ensembler.classifier <- function(data, outcomeVARIABLEINDEX, IndividualModels,  
 
 
 ensembler.regression <- function(data, outcomeVARIABLEINDEX, IndividualModels,  TopLayerModel, dstr,dsv, dst, unseen_new_data) {
-  predictors <- names(data[,-c(outcomeVARIABLEINDEX)])
   print(predictors)
-  fractionTraining   <- dstr #0.60
-  fractionValidation <- dsv #0.20
-  fractionTest       <- dst #0.20
+  fractionTraining   <- dstr
+  fractionValidation <- dsv
+  fractionTest       <- dst
 
   # Compute sample sizes.
   sampleSizeTraining   <- floor(fractionTraining   * nrow(data))
@@ -100,14 +97,12 @@ ensembler.regression <- function(data, outcomeVARIABLEINDEX, IndividualModels,  
     print(model)
     Training[, (ncol(Training)+1)] <- (caret::predict.train(object=model, (Training[,predictors])))
     print(Training[, (ncol(Training))])
-    #training[, (ncol(training))] <- mean(training[, (ncol(training))])
 
     Validation[,(ncol(Validation)+1)] <- (caret::predict.train(object=model, (Validation[,predictors])))
 
 
 
     Test[,(ncol(Test)+1)] <- (caret::predict.train(object=model, (Test[,predictors])))
-    #testing[, (ncol(testing))] <- mean(testing[, (ncol(testing))])
 
 
   }
@@ -119,10 +114,7 @@ ensembler.regression <- function(data, outcomeVARIABLEINDEX, IndividualModels,  
   predictions <- caret::predict.train(object=model_final, Test[,predictors])
   print(predictions)
   actual_label <-  Test[,outcomeVARIABLEINDEX]
-  #return(predictions)
   testpreddata <- cbind(Test[,predictors], predictions,  actual_label )
-  #predictors <- names(unseen_new_data[,-c(outcomeVARIABLEINDEX)])
-  #print(predictors)
   model_results <- caret::postResample(pred = predictions, obs = actual_label)
   unseenpreddata <- caret::predict.train(object=model_final, unseen_new_data[,-c(outcomeVARIABLEINDEX)]) #unseen_new_data[,predictors]
   unseenpreddata <- cbind(unseen_new_data[,predictors], unseenpreddata)
