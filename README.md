@@ -52,6 +52,7 @@ ggsave("testdata_actual_vs_predicted_plot.pdf",grid.arrange(act_mybar, pred_myba
 ####unseen data###
 unseenpreddata <- data.frame(ensembler_return[4])
 table(unseenpreddata$unseenpreddata)
+table(unseen_new_data_testing$Species)
 ```
 
 # demo regression
