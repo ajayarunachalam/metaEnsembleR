@@ -1,10 +1,10 @@
 exportPattern("^[[:alpha:]]+")
 
-importFrom("gridExtra")
+import("gridExtra")
 
 
 export(ensembler.classifier
-  , ensembler.regression )
+  , ensembler.regression)
 
 
 
