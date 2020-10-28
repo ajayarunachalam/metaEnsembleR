@@ -56,6 +56,7 @@ table(unseenpreddata$unseenpreddata)
 
 # demo regression
 ```
+library("metaEnsembleR")
 data("rock")
 unseen_rock_data <- rock[30:48,]
 ensembler_return <- ensembler.regression(rock[1:30,], 4,c('lm'), 'rf', 0.40, 0.30, 0.30, unseen_rock_data)
