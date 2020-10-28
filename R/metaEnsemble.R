@@ -67,6 +67,7 @@ ensembler.classifier <- function(data, outcomeVARIABLEINDEX, IndividualModels,  
 
 
 ensembler.regression <- function(data, outcomeVARIABLEINDEX, IndividualModels,  TopLayerModel, dstr,dsv, dst, unseen_new_data) {
+  predictors <- names(data[,-c(outcomeVARIABLEINDEX)])
   print(predictors)
   fractionTraining   <- dstr #0.60
   fractionValidation <- dsv #0.20
