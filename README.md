@@ -11,11 +11,11 @@ Intuitive Package for Heterogeneous Ensemble Meta-Learning
 
 ## Overview
 metaEnsembleR is a package for meta-level ensemble learning (Classification, Regression) that is fully-automated.
-It significantly lowers the barrier for the practitioners to apply heterogeneous ensemble learning techniques in an amateur fashion to their everyday predictive problems. Comprehensive demo examples can be found in ``` Rscript Demo.R ```
+It significantly lowers the barrier for the practitioners to apply heterogeneous ensemble learning techniques in an amateur fashion to their everyday predictive problems. Comprehensive demonstrations can be found in Demo.R file, to see the results run ``` Rscript Demo.R ``` in the terminal.
 
 ## How to start
 ```
-Install from GitHub :  devtools::install_github("ajayarunachalam/metaEnsembleR")
+Install from GitHub :  devtools::install_github(repo = 'ajayarunachalam/metaEnsembleR', ref = 'main')
 ```
 
 ```
@@ -56,10 +56,9 @@ table(unseenpreddata$unseenpreddata)
 
 # demo regression
 ```
-house_price <- read.csv(file = './data/regression/house_price_data.csv')
-unseen_new_data_testing_house_price <- house_price[250:414,]
-write.csv(unseen_new_data_testing_house_price, 'unseen_house_price_regression.csv', fileEncoding = 'UTF-8', row.names = F)
-ensembler_return <- ensembler.regression(house_price[1:250,], 1, c('treebag','rpart'), 'gbm', 0.60, 0.20, 0.20, read.csv('./unseen_house_price_regression.csv'))
+data("rock")
+unseen_rock_data <- rock[30:48,]
+ensembler_return <- ensembler.regression(rock[1:30,], 3, c('treebag','rpart'), 'gbm', 0.60, 0.20, 0.20, unseen_rock_data)
 testpreddata <- data.frame(ensembler_return[1])
 
 
